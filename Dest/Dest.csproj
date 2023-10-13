@@ -1,25 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>net7.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+
+	  <AssemblyName>Dest.Net</AssemblyName>
+	  <PackAsTool>True</PackAsTool>
+	  <ToolCommandName>dest</ToolCommandName>
+	  <Title>Dest.Net</Title>
+	  <PackageId>Dest.Net</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Fábio Salomão</Authors>
+	  <Description>
+		  Ferramenta de desenvolvimento destinada a criação de testes unitários para .Net Core com a utilização de AI da OpenAI - GPT 3.5 Turbo.</Description>
+	  <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Locator" Version="1.6.10" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="OpenAI" Version="1.7.2" />
+	<PackageReference Include="Microsoft.Build.Locator" Version="1.6.10" />
+	<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
+	<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.7.0" />
+	<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.7.0" />
+	<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.7.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	<PackageReference Include="OpenAI" Version="1.7.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Utils\CocDbSet.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+	<None Update="Utils\CocDbSet.txt">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
   </ItemGroup>
 
 </Project>
