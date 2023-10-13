@@ -1,0 +1,101 @@
+﻿public class CocDbSet<T> where T : class
+{
+    private readonly IGenerator _generator;
+    private readonly string _connectionString;
+    private string _whereClause = string.Empty;
+    private string _orderByClause = string.Empty;
+    private string _joinClause = string.Empty;
+    private int _page;
+    private int _limit;
+    private string _distinctClause = string.Empty;
+    private DynamicParameters _parameters = new DynamicParameters();
+    private List<string> _selectedColumns = new List<string>();
+    private List<(Type relatedType, PropertyInfo primaryKeyProp, string propertyName, PropertyInfo navigationPropertyInfo, string foreignKeyName, string query)> queries = new List<(Type, PropertyInfo, string, PropertyInfo, string, string)>();
+
+    public CocDbSet()
+    {
+
+    }
+    public CocDbSet(IDictionary<DataBaseConnection, string> connections)
+    {
+        _generator = new Generator();
+        _connectionString = connections.FirstOrDefault(e => e.Key == DataBaseConnection.AGR_Cadastro).Value;
+    }
+    public virtual async Task<T> AddAsync(T entity)
+    {
+       ...
+    }
+    public virtual async Task<T> EditAsync(T entity)
+    {
+        ...
+    }
+    public virtual async Task DeleteAsync(T entity)
+    {
+        ...
+    }
+    public virtual async Task<bool> AnyAsync()
+    {
+       ...
+    }
+    public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+    {
+        ...
+    }
+    public virtual async Task<int> CountAsync()
+    {
+        ...
+    }
+
+    public virtual async Task<int> CountAsync(Expression<Func<T, bool>> predicate)
+    {
+       ...
+    }
+    public virtual async Task<T> MaxByAsync(Expression<Func<T, object>> predicate)
+    {
+        ...
+    }
+    public virtual async Task<T> MinByAsync(Expression<Func<T, object>> predicate)
+    {
+        ...
+    }
+    public virtual CocDbSet<T> Distinct(Expression<Func<T, object>> predicate)
+    {
+       ...
+    }
+    public virtual CocDbSet<T> Where(Expression<Func<T, bool>> predicate)
+    {
+        ...
+    }
+    public virtual CocDbSet<T> Select(Expression<Func<T, object>> columns)
+    {
+        ...
+    }
+    public virtual CocDbSet<T> Include<TProperty>(Expression<Func<T, TProperty>> navigationProperty)
+    {
+        ...
+    }
+    public virtual CocDbSet<T> OrderBy(Expression<Func<T, object>> orderBy)
+    {
+       ...
+    }
+    public virtual CocDbSet<T> OrderByDesc(Expression<Func<T, object>> orderBy)
+    {
+       ...
+    }
+    public virtual CocDbSet<T> Skip(int skip)
+    {
+       ...
+    }
+    public virtual CocDbSet<T> Take(int take)
+    {
+       ...
+    }
+    public virtual async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+    {
+       ...
+    }
+    public virtual async Task<List<T>> ToListAsync()
+    {
+        ...
+    }
+}
