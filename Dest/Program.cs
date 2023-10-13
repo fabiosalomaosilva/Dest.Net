@@ -46,10 +46,22 @@ namespace Dest
 
                 if (args.Length > 0 && args[0] == "config")
                 {
+                    Console.WriteLine("");
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Configurar o Dest.Net CLI:");
                     Console.WriteLine("");
 
                     await Config.SetTestProject();
+                }
+                if (args.Length > 0 && args[0] == "help")
+                {
+                    Console.WriteLine("Comandos do Dest.Net CLI:");
+                    Console.WriteLine("------------##------------");
+                    Console.WriteLine();
+                    Console.WriteLine("add-test -p nome-projeto          Cria os testes unitários do projeto selecionado");
+                    Console.WriteLine("");
+
+                    return;
                 }
 
                 if (args.Length > 0 && args[0] == "add-tests")

@@ -102,6 +102,7 @@ namespace Dest.Settings
 
         private static string SelectFromList(string prompt, List<string> options)
         {
+            Console.WriteLine("");
             Console.WriteLine(prompt);
             for (var i = 0; i < options.Count; i++)
             {
